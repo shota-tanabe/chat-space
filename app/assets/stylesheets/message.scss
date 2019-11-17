@@ -5,7 +5,7 @@
   .chat-side{
     width: 300px;
     .side-header {
-    background-color: #253141;
+      background-color: #253141;
       height: 100px;
       display: flex;
       align-items: center;
@@ -26,31 +26,30 @@
             margin-left: 0.3rem;
           }
         }
-
-        }
       }
-        
     }
     .groups{
-    height: calc(100vh - 100px);
+      height: calc(100vh - 100px);
       background-color: #2f3e51;
       padding: 20px 20px 0;
       color: white;
       overflow: scroll;
       .group
         .group-name{
+          color: white;
           font-size: 15px;
           margin-bottom: 5px;
         }
         .group-message{
+          color: white;
           font-size: 5px;
         }
+      }
     }
-  }
+  
 
   .chat-main{
     width: calc(100vw - 300px);
-
     .main-header{
       background-color: white;
       height: 100px;
@@ -146,4 +145,5 @@
         text-align:center  
       }
     }
+  }
 }
