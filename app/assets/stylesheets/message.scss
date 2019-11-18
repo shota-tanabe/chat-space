@@ -84,9 +84,10 @@
         }
     }
     .messages{
+      overflow: hidden;
       background-color: #fafafa;
       box-sizing: border-box;
-      height: calc(100% - 100px - 90px);
+      height: calc(100vh - 100px - 90px);
       padding: 46px 40px 0;
       .message{
         padding-bottom: 40px;
@@ -122,19 +123,22 @@
         color: #434a54;
         border-style: none;
         background-color: white;
+      }
       .picture-icon{
         display: flex;
         position: absolute;
-        font-size: 1.3rem;
-        right: 82px;
-        bottom: 17px;
+        font-size: 22px;
+        right: 185px;
+        bottom: 32px;
         color: black;
         text-decoration: none;
-        }      
-      }
+        .hidden {
+          display: none;
+        }
+      }      
+      
       .send-btn{
-        position: absolute;
-        right: 40px;
+        right: 30px;
         background-color: #38aef0;
         color: white;
         cursor: pointer;

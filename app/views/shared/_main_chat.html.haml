@@ -2,26 +2,22 @@
   .main-header
     .main-header__left-box
       .main-header__left-box__current-group
-        group name
+        = @group.name
       .main-header__left-box__current-menber
 
-        menber
+        Menber: 
+      - @group.users.each do |user|
+        = user.name
     
-    =link_to "", class: "main-header__exit-btn" do
-      Edit
+    =link_to "Edit", edit_group_path(@group), class: "main-header__exit-btn"
+
   .messages
-    .message
-      .message__upper
-        .message__upper__name
-          wwe
-        .message__upper__date
-          9月
-      .message-lower
-        プログラミングむずかしい
+    = render @messages
   .form
-    .form-bar
-      .picture-icon
-        =link_to "", class: "picture-icon" do
-          = fa_icon 'image'
-    .send-btn
-      Send       
+    = form_for [@group, @message] do |f|
+      = f.text_field :content, class: 'form-bar', placeholder: 'type a message'
+      = f.label :image, class: 'picture-icon' do
+        = fa_icon 'image', class: 'icon'
+        -# = icon('fas', 'image', class: 'icon')
+        = f.file_field :image, class: 'hidden'
+      = f.submit 'Send', class: 'send-btn'
