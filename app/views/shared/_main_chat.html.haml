@@ -6,8 +6,8 @@
       .main-header__left-box__current-menber
 
         Menber: 
-      - @group.users.each do |user|
-        = user.name
+        - @group.users.each do |user|
+          = user.name
     
     =link_to "Edit", edit_group_path(@group), class: "main-header__exit-btn"
 
@@ -15,9 +15,9 @@
     = render @messages
   .form
     = form_for [@group, @message] do |f|
-      = f.text_field :content, class: 'form-bar', placeholder: 'type a message'
-      = f.label :image, class: 'picture-icon' do
-        = fa_icon 'image', class: 'icon'
-        -# = icon('fas', 'image', class: 'icon')
-        = f.file_field :image, class: 'hidden'
-      = f.submit 'Send', class: 'send-btn'
+      = f.text_field :content, class: 'form__message', placeholder: 'type a message'
+      .form__mask
+        = f.label :image, class: 'form__mask__image' do
+          = icon('fa', 'image', class: 'icon')
+          = f.file_field :image, class: 'hidden'
+      = f.submit 'Send', class: 'form__submit'

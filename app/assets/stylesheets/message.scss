@@ -84,7 +84,7 @@
         }
     }
     .messages{
-      overflow: hidden;
+      overflow: scroll;
       background-color: #fafafa;
       box-sizing: border-box;
       height: calc(100vh - 100px - 90px);
@@ -112,41 +112,39 @@
         }
       }
     }
-    .form{
+    .form {
+      background-color: #DDDDDD;
+      box-sizing: border-box;
       height: 90px;
-      padding: 20px 40px;
-      background-color: #ddd;
-      .form-bar{
+      padding: 20px 50px 20px 40px;
+      &__message {
+        border: none;
+        float: left;
         height: 50px;
-        width: 89%;
-        padding: 0 40px 0 10px;
-        color: #434a54;
-        border-style: none;
-        background-color: white;
+        width: calc(100% - 150px);
       }
-      .picture-icon{
-        display: flex;
-        position: absolute;
-        font-size: 22px;
-        right: 185px;
-        bottom: 32px;
-        color: black;
-        text-decoration: none;
+      &__mask {
+        background-color: $white;
+        float: left;
+        height: 50px;
+        padding-right: 10px;
+        &__image {
+          font-size: 20px;
+          line-height: 50px;
+        }
         .hidden {
           display: none;
         }
-      }      
-      
-      .send-btn{
-        right: 30px;
-        background-color: #38aef0;
-        color: white;
-        cursor: pointer;
-        width: 100px;
+      }
+      &__submit {
+        background-color: $light_blue;
+        border: none;
+        color: $white;
+        float: right;
+        font-size: 16px;
         height: 50px;
-        bottom: 20px;
-        line-height: 50px;
-        text-align:center  
+        margin-left: 15px;
+        padding: 0 30px;
       }
     }
   }
