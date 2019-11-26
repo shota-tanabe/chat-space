@@ -46,7 +46,9 @@ $(function(){
     });
   });
   var reloadMessages = function() {
+    
       let last_message_id = $(".message:last").data('id');
+      if(window.location.href.match(/\/groups\/\d+\/messages/))
       $.ajax({
         url: 'api/messages',
         type: 'get',
@@ -64,6 +66,10 @@ $(function(){
       .fail(function() {
         alert('error');
       });
-  };
+
+      //strにhogeを含む場合の処理
+      
+      }
+
   setInterval(reloadMessages, 5000);
 });
